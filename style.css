@@ -26,6 +26,22 @@ body {
   box-shadow: 0 0 30px rgba(65, 105, 225, 0.3), 0 0 60px rgba(65, 105, 225, 0.2), 0 0 90px rgba(65, 105, 225, 0.1);
 }
 
+.magic-ball.shaking {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0) rotate(0);
+  }
+  20%, 60% {
+    transform: translateX(-5px) rotate(-2deg);
+  }
+  40%, 80% {
+    transform: translateX(5px) rotate(2deg);
+  }
+}
+
 .answer {
   width: 240px;
   height: 240px;

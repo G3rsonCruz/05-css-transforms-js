@@ -1,5 +1,6 @@
 // Get the element where the answer will be displayed.
 const answer = document.getElementById("answer");
+let isShaking = false;
 // Array of possible answers for the Magic 8-Ball.
 const answers = [
   "It is certain",
@@ -26,5 +27,14 @@ const answers = [
 
 // Event listener for the Magic 8-Ball click.
 document.getElementById("magicBall").addEventListener("click", function() {
-  answer.innerText = answers[Math.floor(Math.random() * answers.length)];
+  if (isShaking === false) {
+    isShaking = true;
+    document.getElementById("magicBall").classList.add("shaking");
+
+    setTimeout(function() {
+      answer.innerText = answers[Math.floor(Math.random() * answers.length)];
+      document.getElementById("magicBall").classList.remove("shaking");
+      isShaking = false;
+    }, 500);
+  }
 });
