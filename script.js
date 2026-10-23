@@ -29,12 +29,13 @@ const answers = [
 document.getElementById("magicBall").addEventListener("click", function() {
   if (isShaking === false) {
     isShaking = true;
+    answer.innerText = "";
     document.getElementById("magicBall").classList.add("shaking");
 
     setTimeout(function() {
       answer.innerText = answers[Math.floor(Math.random() * answers.length)];
       document.getElementById("magicBall").classList.remove("shaking");
       isShaking = false;
-    }, 500);
+    }, 700);
   }
 });
